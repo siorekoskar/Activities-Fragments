@@ -16,7 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ItemDetailActivity"></activity>
+        <activity
+            android:name=".ItemDetailActivity"
+            android:parentActivityName="pl.edu.agh.activities_fragments.ActivityItemsList">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pl.edu.agh.activities_fragments.ActivityItemsList" />
+        </activity>
     </application>
 
 </manifest>
