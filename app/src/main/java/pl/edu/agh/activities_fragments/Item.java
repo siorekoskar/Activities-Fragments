@@ -1,12 +1,14 @@
 package pl.edu.agh.activities_fragments;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by karl on 12/3/2018.
  */
 
-public class Item {
+public class Item implements Serializable {
+    private static final long serialVersionUID = -1213949467658913456L;
     private String title;
     private String body;
 
