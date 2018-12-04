@@ -1,4 +1,4 @@
-package pl.edu.agh.activities_fragments;
+package pl.edu.agh.activities_fragments.fragments;
 
 
 import android.app.Fragment;
@@ -8,18 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import pl.edu.agh.activities_fragments.domain.News;
+import pl.edu.agh.activities_fragments.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ItemDetailFragment extends android.support.v4.app.Fragment {
+public class NewsDetailFragment extends android.support.v4.app.Fragment {
 
-    private Item item;
+    private News news;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        item = (Item) getArguments().getSerializable("item");
+        news = (News) getArguments().getSerializable("news");
     }
 
     @Override
@@ -29,20 +32,20 @@ public class ItemDetailFragment extends android.support.v4.app.Fragment {
                 container, false);
         TextView tvTitle = (TextView) view.findViewById(R.id.tvTitle);
         TextView tvBody = (TextView) view.findViewById(R.id.tvBody);
-        tvTitle.setText(item.getTitle());
-        tvBody.setText(item.getBody());
+        tvTitle.setText(news.getTitle());
+        tvBody.setText(news.getBody());
         return view;
     }
 
-    public ItemDetailFragment() {
+    public NewsDetailFragment() {
         // Required empty public constructor
     }
 
-    // ItemDetailFragment.newInstance(item)
-    public static ItemDetailFragment newInstance(Item item) {
-        ItemDetailFragment fragmentDemo = new ItemDetailFragment();
+    // NewsDetailFragment.newInstance(news)
+    public static NewsDetailFragment newInstance(News news) {
+        NewsDetailFragment fragmentDemo = new NewsDetailFragment();
         Bundle args = new Bundle();
-        args.putSerializable("item", item);
+        args.putSerializable("news", news);
         fragmentDemo.setArguments(args);
         return fragmentDemo;
     }

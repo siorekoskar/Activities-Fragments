@@ -1,4 +1,4 @@
-package pl.edu.agh.activities_fragments;
+package pl.edu.agh.activities_fragments.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -12,18 +12,21 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import pl.edu.agh.activities_fragments.domain.News;
+import pl.edu.agh.activities_fragments.R;
+
 /**
  * Created by karl on 12/3/2018.
  */
 
-public class ItemsListFragment extends Fragment {
-    private ArrayAdapter<Item> adapterItems;
+public class NewsListFragment extends Fragment {
+    private ArrayAdapter<News> adapterItems;
     private ListView lvItems;
 
     private OnListItemSelectedListener listener;
 
     public interface OnListItemSelectedListener {
-        public void onItemSelected(Item item);
+        public void onItemSelected(News news);
     }
 
     @Override
@@ -34,7 +37,7 @@ public class ItemsListFragment extends Fragment {
         } else {
             throw new ClassCastException(
                     activity.toString()
-                            + " must implement ItemsListFragment.OnListItemSelectedListener");
+                            + " must implement NewsListFragment.OnListItemSelectedListener");
         }
     }
 
@@ -42,10 +45,10 @@ public class ItemsListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Create arraylist from item fixtures
-        ArrayList<Item> items = Item.getItems();
-        // Create adapter based on items
-        adapterItems = new ArrayAdapter<Item>(getActivity(),
-                android.R.layout.simple_list_item_activated_1, items);
+        ArrayList<News> news = News.getItems();
+        // Create adapter based on news
+        adapterItems = new ArrayAdapter<News>(getActivity(),
+                android.R.layout.simple_list_item_activated_1, news);
     }
 
     @Override
@@ -62,9 +65,9 @@ public class ItemsListFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View item,
                                     int position, long rowId) {
                 // Retrieve item based on position
-                Item item2 = adapterItems.getItem(position);
+                News news2 = adapterItems.getItem(position);
                 // Fire selected listener event with item
-                listener.onItemSelected(item2); // <--------------
+                listener.onItemSelected(news2); // <--------------
             }
         });
         return view;

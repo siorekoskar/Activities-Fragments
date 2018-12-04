@@ -1,4 +1,4 @@
-package pl.edu.agh.activities_fragments;
+package pl.edu.agh.activities_fragments.activities;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
@@ -6,7 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
-public class ActivityItemsList extends AppCompatActivity implements ItemsListFragment.OnListItemSelectedListener {
+import pl.edu.agh.activities_fragments.domain.News;
+import pl.edu.agh.activities_fragments.R;
+import pl.edu.agh.activities_fragments.fragments.NewsDetailFragment;
+import pl.edu.agh.activities_fragments.fragments.NewsListFragment;
+
+public class NewsListActivity extends AppCompatActivity implements NewsListFragment.OnListItemSelectedListener {
 
     // Flag determines if this is a one or two pane layout
     private boolean isTwoPane = false;
@@ -28,17 +33,17 @@ public class ActivityItemsList extends AppCompatActivity implements ItemsListFra
     }
 
     @Override
-    public void onItemSelected(Item item) {
+    public void onItemSelected(News news) {
         if (isTwoPane) { // single activity with list and detail
             // Replace framelayout with new detail fragment
-            ItemDetailFragment fragmentItem = ItemDetailFragment.newInstance(item);
+            NewsDetailFragment fragmentItem = NewsDetailFragment.newInstance(news);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.flDetailContainer, fragmentItem);
             ft.commit();
         } else { // go to separate activity
             // launch detail activity using intent
-            Intent i = new Intent(this, ItemDetailActivity.class);
-            i.putExtra("item", item);
+            Intent i = new Intent(this, NewsDetailActivity.class);
+            i.putExtra("news", news);
             startActivity(i);
         }
     }

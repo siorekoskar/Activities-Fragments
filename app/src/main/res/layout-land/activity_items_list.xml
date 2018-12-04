@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/fragmentItemsList"
-        android:name="pl.edu.agh.activities_fragments.ItemsListFragment"
+        android:name="pl.edu.agh.activities_fragments.fragments.NewsListFragment"
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="1"

@@ -1,4 +1,4 @@
-package pl.edu.agh.activities_fragments;
+package pl.edu.agh.activities_fragments.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,12 +7,12 @@ import java.util.ArrayList;
  * Created by karl on 12/3/2018.
  */
 
-public class Item implements Serializable {
+public class News implements Serializable {
     private static final long serialVersionUID = -1213949467658913456L;
     private String title;
     private String body;
 
-    public Item(String title, String body) {
+    public News(String title, String body) {
         this.title = title;
         this.body = body;
     }
@@ -30,11 +30,11 @@ public class Item implements Serializable {
         return getTitle();
     }
 
-    public static ArrayList<Item> getItems() {
-        ArrayList<Item> items = new ArrayList<Item>();
-        items.add(new Item("Item 1", "This is the first item"));
-        items.add(new Item("Item 2", "This is the second item"));
-        items.add(new Item("Item 3", "This is the third item"));
-        return items;
+    public static ArrayList<News> getItems() {
+        ArrayList<News> news = new ArrayList<News>();
+        news.add(new News("News 1", "This is the first item"));
+        news.add(new News("News 2", "This is the second item"));
+        news.add(new News("News 3", "This is the third item"));
+        return news;
     }
 }

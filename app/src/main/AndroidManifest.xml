@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityItemsList">
+        <activity android:name=".activities.NewsListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,12 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ItemDetailActivity"
-            android:parentActivityName="pl.edu.agh.activities_fragments.ActivityItemsList">
+            android:name=".activities.NewsDetailActivity"
+            android:parentActivityName="pl.edu.agh.activities_fragments.activities.NewsListActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pl.edu.agh.activities_fragments.ActivityItemsList" />
+                android:value="pl.edu.agh.activities_fragments.activities.NewsListActivity" />
         </activity>
     </application>
 

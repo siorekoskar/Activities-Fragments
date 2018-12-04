@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/fragmentItemsList"
-        android:name="pl.edu.agh.activities_fragments.ItemsListFragment"
+        android:name="pl.edu.agh.activities_fragments.fragments.NewsListFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
