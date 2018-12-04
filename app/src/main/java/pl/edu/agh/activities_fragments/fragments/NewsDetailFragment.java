@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import pl.edu.agh.activities_fragments.domain.News;
@@ -32,8 +33,10 @@ public class NewsDetailFragment extends android.support.v4.app.Fragment {
                 container, false);
         TextView tvTitle = (TextView) view.findViewById(R.id.tvTitle);
         TextView tvBody = (TextView) view.findViewById(R.id.tvBody);
+        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
         tvTitle.setText(news.getTitle());
         tvBody.setText(news.getBody());
+        imageView.setImageResource(news.getImage());
         return view;
     }
 
