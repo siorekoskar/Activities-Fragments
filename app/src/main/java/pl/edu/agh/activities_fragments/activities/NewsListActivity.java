@@ -21,17 +21,8 @@ public class NewsListActivity extends AppCompatActivity implements NewsListFragm
 
     @Override
     public void onItemSelected(News news) {
-        int orientation = getResources().getConfiguration().orientation;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            NewsDetailFragment fragmentItem = NewsDetailFragment.newInstance(news);
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.flDetailContainer, fragmentItem);
-            ft.addToBackStack(null);
-            ft.commit();
-        } else {
-            Intent i = new Intent(this, NewsDetailActivity.class);
-            i.putExtra("news", news);
-            startActivity(i);
-        }
+        Intent i = new Intent(this, NewsDetailActivity.class);
+        i.putExtra("news", news);
+        startActivity(i);
     }
 }
