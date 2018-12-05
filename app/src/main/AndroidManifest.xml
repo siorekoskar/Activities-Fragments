@@ -16,13 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.NewsDetailActivity"
-            android:parentActivityName="pl.edu.agh.activities_fragments.activities.NewsListActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="pl.edu.agh.activities_fragments.activities.NewsListActivity" />
-        </activity>
     </application>
 
 </manifest>
