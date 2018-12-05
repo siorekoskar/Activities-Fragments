@@ -19,7 +19,6 @@
         <activity
             android:name=".activities.NewsDetailActivity"
             android:parentActivityName="pl.edu.agh.activities_fragments.activities.NewsListActivity">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pl.edu.agh.activities_fragments.activities.NewsListActivity" />

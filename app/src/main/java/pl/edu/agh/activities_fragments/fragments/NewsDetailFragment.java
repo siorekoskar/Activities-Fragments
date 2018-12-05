@@ -13,9 +13,7 @@ import pl.edu.agh.activities_fragments.domain.News;
 import pl.edu.agh.activities_fragments.R;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class NewsDetailFragment extends android.support.v4.app.Fragment {
 
     private News news;
@@ -41,10 +39,8 @@ public class NewsDetailFragment extends android.support.v4.app.Fragment {
     }
 
     public NewsDetailFragment() {
-        // Required empty public constructor
     }
 
-    // NewsDetailFragment.newInstance(news)
     public static NewsDetailFragment newInstance(News news) {
         NewsDetailFragment fragmentDemo = new NewsDetailFragment();
         Bundle args = new Bundle();

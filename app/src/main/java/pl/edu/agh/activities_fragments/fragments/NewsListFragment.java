@@ -19,6 +19,7 @@ import pl.edu.agh.activities_fragments.R;
  * Created by karl on 12/3/2018.
  */
 
+@SuppressWarnings("ALL")
 public class NewsListFragment extends Fragment {
     private ArrayAdapter<News> adapterItems;
     private ListView lvItems;
@@ -44,9 +45,7 @@ public class NewsListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Create arraylist from item fixtures
         ArrayList<News> news = News.getItems();
-        // Create adapter based on news
         adapterItems = new ArrayAdapter<News>(getActivity(),
                 android.R.layout.simple_list_item_activated_1, news);
     }
@@ -54,20 +53,16 @@ public class NewsListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate view
         View view = inflater.inflate(R.layout.fragment_items_list, container,
                 false);
-        // Bind adapter to ListView
         lvItems = (ListView) view.findViewById(R.id.lvItems);
         lvItems.setAdapter(adapterItems);
         lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View item,
                                     int position, long rowId) {
-                // Retrieve item based on position
                 News news2 = adapterItems.getItem(position);
-                // Fire selected listener event with item
-                listener.onItemSelected(news2); // <--------------
+                listener.onItemSelected(news2);
             }
         });
         return view;
